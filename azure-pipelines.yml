@@ -48,13 +48,21 @@ stages:
             displayName: "Install requirements"
 
           - script: |
+              python -m venv antenv
+              source antenv/bin/activate
+              python -m pip install --upgrade pip
               make lint
+            workingDirectory: $(projectRoot)
             displayName: "Run lint tests"
 
           - script: |
+              python -m venv antenv
+              source antenv/bin/activate
+              python -m pip install --upgrade pip
               pip install pytest
               pip install pytest-cov
               pytest tests --doctest-modules --junitxml=junit/test-results.xml --cov=. --cov-report=xml --cov-report=html
+            workingDirectory: $(projectRoot)
             displayName: "Test with pytest"
 
           - task: ArchiveFiles@2
