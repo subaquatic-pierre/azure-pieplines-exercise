@@ -22,7 +22,12 @@ def scale(payload):
 
 @app.route("/")
 def home():
-    html = "<h3>Sklearn Prediction Home</h3>"
+    html = """
+    <h1>Awesome WebApp life !</h1>
+    <p>The world is an amazingplace, each day we can do something to make it a better place</p>
+    <h3>Sklearn Prediction Home</h3>
+    
+    """
     return html.format(format)
 
 
