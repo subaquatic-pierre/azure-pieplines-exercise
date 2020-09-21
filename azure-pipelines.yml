@@ -11,13 +11,13 @@ variables:
   azureServiceConnectionId: "f68ea577-6c0a-43e2-9163-311d7f02ec1f"
 
   # Web app name
-  webAppName: "azure-piplines-exercise"
+  webAppName: "azure-pipelines-exercise"
 
   # Agent VM image name
   vmImageName: "ubuntu-latest"
 
   # Environment name
-  environmentName: "azure-piplines-exercise"
+  environmentName: "azure-pipelines-exercise"
 
   # Project root folder. Point to the folder containing manage.py file.
   projectRoot: $(System.DefaultWorkingDirectory)
@@ -79,7 +79,7 @@ stages:
                   displayName: "Use Python version"
 
                 - task: AzureWebApp@1
-                  displayName: "Deploy Azure Web App : azure-piplines-exercise"
+                  displayName: "Deploy Azure Web App : azure-pipelines-exercise"
                   inputs:
                     azureSubscription: $(azureServiceConnectionId)
                     appName: $(webAppName)
